@@ -1,0 +1,255 @@
+{% extends 'index.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="{% static 'image/favicon.png' %}" rel="icon" />
+{% block title %}
+<title>ورود</title>
+{% endblock %}
+<meta name="description" content="Responsive and clean html template design for any kind of ecommerce webshop">
+<!-- CSS Part Start-->
+<link rel="stylesheet" type="text/css" href="{% static 'js/bootstrap/css/bootstrap.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'js/bootstrap/css/bootstrap-rtl.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome/css/font-awesome.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/owl.transitions.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet-rtl.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/responsive-rtl.css' %}" />
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans' type='text/css'>
+<!-- CSS Part End-->
+</head>
+<body>
+<div class="wrapper-wide">
+  <div id="header">
+    <!-- Top Bar Start-->
+    <nav id="top" class="htop">
+      <div class="container">
+        <div class="row"> <span class="drop-icon visible-sm visible-xs"><i class="fa fa-align-justify"></i></span>
+          <div class="pull-left flip left-top">
+            <div class="links">
+              <ul>
+                <li class="mobile"><i class="fa fa-phone"></i>+21 9898777656</li>
+                <li class="email"><a href="mailto:info@marketshop.com"><i class="fa fa-envelope"></i>info@marketshop.com</a></li>
+                <li class="wrap_custom_block hidden-sm hidden-xs"><a>بلاک سفارشی<b></b></a>
+                  <div class="dropdown-menu custom_block">
+                    <ul>
+                      <li>
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td><img alt="" src="image/banner/cms-block.jpg"></td>
+                              <td><img alt="" src="image/banner/responsive.jpg"></td>
+                            </tr>
+                            <tr>
+                              <td><h4>بلاک های محتوا</h4></td>
+                              <td><h4>قالب واکنش گرا</h4></td>
+                            </tr>
+                            <tr>
+                              <td>این یک بلاک مدیریت محتواست. شما میتوانید هر نوع محتوای html نوشتاری یا تصویری را در آن قرار دهید.</td>
+                              <td>این یک بلاک مدیریت محتواست. شما میتوانید هر نوع محتوای html نوشتاری یا تصویری را در آن قرار دهید.</td>
+                            </tr>
+                            <tr>
+                              <td><strong><a class="btn btn-default btn-sm" href="#">ادامه مطلب</a></strong></td>
+                              <td><strong><a class="btn btn-default btn-sm" href="#">ادامه مطلب</a></strong></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li><a href="#">لیست علاقه مندی (0)</a></li>
+                <li><a href="checkout.html">تسویه حساب</a></li>
+              </ul>
+            </div>
+            <div id="language" class="btn-group">
+              <button class="btn-link dropdown-toggle" data-toggle="dropdown"> <span> <img src="image/flags/gb.png" alt="انگلیسی" title="انگلیسی">انگلیسی <i class="fa fa-caret-down"></i></span></button>
+              <ul class="dropdown-menu">
+                <li>
+                  <button class="btn btn-link btn-block language-select" type="button" name="GB"><img src="image/flags/gb.png" alt="انگلیسی" title="انگلیسی" /> انگلیسی</button>
+                </li>
+                <li>
+                  <button class="btn btn-link btn-block language-select" type="button" name="GB"><img src="image/flags/ar.png" alt="عربی" title="عربی" /> عربی</button>
+                </li>
+              </ul>
+            </div>
+            <div id="currency" class="btn-group">
+              <button class="btn-link dropdown-toggle" data-toggle="dropdown"> <span> تومان <i class="fa fa-caret-down"></i></span></button>
+              <ul class="dropdown-menu">
+                <li>
+                  <button class="currency-select btn btn-link btn-block" type="button" name="EUR">€ Euro</button>
+                </li>
+                <li>
+                  <button class="currency-select btn btn-link btn-block" type="button" name="GBP">£ Pound Sterling</button>
+                </li>
+                <li>
+                  <button class="currency-select btn btn-link btn-block" type="button" name="USD">$ USD</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="top-links" class="nav pull-right flip">
+            <ul>
+              <li><a href="login.html">ورود</a></li>
+              <li><a href="register.html">ثبت نام</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Top Bar End-->
+    <!-- Header Start-->
+
+    <!-- Header End-->
+    <!-- Main آقایانu Start-->
+
+    <!-- Main آقایانu End-->
+
+
+      <!-- Breadcrumb Start-->
+      {% block content %}
+
+
+      <ul class="breadcrumb">
+        <li><a href="index.html"><i class="fa fa-home"></i></a></li>
+        <li><a href="login.html">حساب کاربری</a></li>
+        <li><a href="login.html">ورود</a></li>
+      </ul>
+      <!-- Breadcrumb End-->
+      <div class="row">
+        <!--Middle Part Start-->
+        <div id="content" class="col-sm-9">
+          <h1 class="title">حساب کاربری ورود</h1>
+          <div class="row">
+            <div class="col-sm-6">
+              <h2 class="subtitle">مشتری جدید</h2>
+              <p><strong>ثبت نام حساب کاربری</strong></p>
+              <p>با ایجاد حساب کاربری میتوانید سریعتر خرید کرده، از وضعیت خرید خود آگاه شده و تاریخچه ی سفارشات خود را مشاهده کنید.</p>
+              <a href="{% url 'shop:register' %}" class="btn btn-primary">ادامه</a> </div>
+            <div class="col-sm-6">
+              <h2 class="subtitle">مشتری قبلی</h2>
+              <p><strong>من از قبل مشتری شما هستم</strong></p>
+
+{#                {% if user.is_authenticated %}#}
+
+                <form method="post" action="{{ app_path }}">
+                    {% csrf_token %}
+                <div class="form-group">
+                    {{ form.username.errors }}
+                  <label class="control-label" for="{{ form.username.id_for_label }}">یوزر نیم:</label>
+                    {{ form.username }}
+
+{#                  <input  type="text" name="email" value="{{ form.username }}" placeholder="آدرس ایمیل" id="input-email" class="form-control" />#}
+                </div>
+                <div class="form-group">
+                    {{ form.password.errors }}
+                  <label class="control-label" for="{{ form.password.id_for_label }}">رمز عبور</label>
+                    {{ form.password }}
+{#                  <input type="password" name="password" value="" placeholder="رمز عبور" id="input-password" class="form-control" />#}
+                  <br />
+                  <a href="{% url 'shop:change_password' %}">فراموشی رمز عبور</a></div>
+                <input type="submit" value="ورود" class="btn btn-primary" />
+                </form>
+{#                {% endif %}#}
+            </div>
+          </div>
+        </div>
+        <!--Middle Part End -->
+        <!--Right Part Start -->
+        <aside id="column-right" class="col-sm-3 hidden-xs">
+          <h3 class="subtitle">حساب کاربری</h3>
+          <div class="list-group">
+            <ul class="list-item">
+              <li><a href="login.html">ورود</a></li>
+              <li><a href="register.html">ثبت نام</a></li>
+              <li><a href="#">فراموشی رمز عبور</a></li>
+              <li><a href="#">حساب کاربری</a></li>
+              <li><a href="#">لیست آدرس ها</a></li>
+              <li><a href="wishlist.html">لیست علاقه مندی</a></li>
+              <li><a href="#">تاریخچه سفارشات</a></li>
+              <li><a href="#">دانلود ها</a></li>
+              <li><a href="#">امتیازات خرید</a></li>
+              <li><a href="#">بازگشت</a></li>
+              <li><a href="#">تراکنش ها</a></li>
+              <li><a href="#">خبرنامه</a></li>
+              <li><a href="#">پرداخت های تکرار شونده</a></li>
+            </ul>
+          </div>
+        </aside>
+        <!--Right Part End -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Facebook Side Block Start -->
+  <div id="facebook" class="fb-left sort-order-1">
+    <div class="facebook_icon"><i class="fa fa-facebook"></i></div>
+    <div class="fb-page" data-href="https://www.facebook.com/harnishdesign/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true" data-show-posts="false">
+      <div class="fb-xfbml-parse-ignore">
+        <blockquote cite="https://www.facebook.com/harnishdesign/"><a href="https://www.facebook.com/harnishdesign/">هارنیش دیزاین</a></blockquote>
+      </div>
+    </div>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  </div>
+  <!-- Facebook Side Block End -->
+  <!-- Twitter Side Block Start -->
+  <div id="twitter_footer" class="twit-left sort-order-2">
+    <div class="twitter_icon"><i class="fa fa-twitter"></i></div>
+    <a class="twitter-timeline" href="https://twitter.com/" data-chrome="nofooter noscrollbar transparent" data-theme="light" data-tweet-limit="2" data-related="twitterapi,twitter" data-aria-polite="assertive" data-widget-id="347621595801608192">توییت های @</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </div>
+  <!-- Twitter Side Block End -->
+  <!-- Video Side Block Start -->
+  <div id="video_box" class="vb-left sort-order-3">
+    <div id="video_box_icon"><i class="fa fa-play"></i></div>
+    <p>
+      <iframe allowfullscreen="" src="//www.youtube.com/embed/SZEflIVnhH8" height="315" width="560"></iframe>
+    </p>
+  </div>
+  <!-- Video Side Block End -->
+  <!-- Custom Side Block Start -->
+  <div id="custom_side_block" class="custom_side_block_left sort-order-4">
+    <div class="custom_side_block_icon"> <i class="fa fa-chevron-right"></i> </div>
+    <table>
+      <tbody>
+        <tr>
+          <td><h2>بلاک های محتوا</h2></td>
+        </tr>
+        <tr>
+          <td><img alt="" src="image/banner/cms-block.jpg"></td>
+        </tr>
+        <tr>
+          <td>میتوانید محتوای دلخواه خود را به این بخش اضافه کنید.</td>
+        </tr>
+        <tr>
+          <td><strong><a href="#">ادامه مطلب</a></strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Custom Side Block End -->
+</div>
+{% endblock %}
+<!-- JS Part Start-->
+<script type="text/javascript" src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.easing-1.3.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.dcjqaccordion.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+<!-- JS Part End-->
+</body>
+</html>

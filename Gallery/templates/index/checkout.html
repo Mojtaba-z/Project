@@ -1,0 +1,471 @@
+{% extends 'index.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="{% static 'image/favicon.png' %}" rel="icon" />
+{% block title %}
+<title>تسویه حساب</title>
+{% endblock %}
+<meta name="description" content="Responsive and clean html template design for any kind of ecommerce webshop">
+<!-- CSS Part Start-->
+<link rel="stylesheet" type="text/css" href="{% static 'js/bootstrap/css/bootstrap.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'js/bootstrap/css/bootstrap-rtl.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome/css/font-awesome.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/owl.transitions.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet-rtl.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/responsive-rtl.css' %}" />
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans' type='text/css'>
+<!-- CSS Part End-->
+</head>
+<body>
+<div class="wrapper-wide">
+  <div id="header">
+    <!-- Top Bar Start-->
+
+    <!-- Top Bar End-->
+    <!-- Header Start-->
+
+          <!-- Mini Cart End-->
+          <!-- جستجو Start-->
+
+          <!-- جستجو End-->
+
+    <!-- Header End-->
+    <!-- Main آقایانu Start-->
+
+
+      {% block content %}
+
+
+  <div id="container">
+    <div class="container">
+      <!-- Breadcrumb Start-->
+      <ul class="breadcrumb">
+        <li><a href="index.html"><i class="fa fa-home"></i></a></li>
+        <li><a href="cart.html">سبد خرید</a></li>
+        <li><a href="checkout.html">تسویه حساب</a></li>
+      </ul>
+      <!-- Breadcrumb End-->
+      <div class="row">
+        <!--Middle Part Start-->
+        <div id="content" class="col-sm-12">
+          <h1 class="title">تسویه حساب</h1>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title"><i class="fa fa-sign-in"></i> یک حساب کاربری ساخته و یا به حساب خود وارد شوید</h4>
+                </div>
+                  <div class="panel-body">
+                        <div class="radio">
+                          <label>
+                            <input type="radio" value="register" name="account">
+                            ثبت نام حساب کاربری</label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" checked="checked" value="guest" name="account">
+                            تسویه حساب مهمان</label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" value="returning" name="account">
+                            مشتری قبلی</label>
+                        </div>
+                  </div>
+              </div>
+                 <form method="post" action="">
+                     {% csrf_token %}
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title"><i class="fa fa-user"></i> اطلاعات شخصی شما</h4>
+                </div>
+
+                  <div class="panel-body">
+                        <fieldset id="account">
+                          <div class="form-group required">
+                              {{ form.first_name.errors }}
+                            <label for="{{ form.first_name.id_for_lable }}" class="control-label">نام</label>
+                              {{ form.first_name }}
+{#                            <input type="text" class="form-control" id="input-payment-firstname" placeholder="نام" value="" name="firstname">#}
+                          </div>
+                          <div class="form-group required">
+                              {{ form.last_name.errors }}
+                            <label for="{{ form.last_name.id_for_lable }}" class="control-label">نام خانوادگی</label>
+                              {{ form.last_name }}
+{#                            <input type="text" class="form-control" id="input-payment-lastname" placeholder="نام خانوادگی" value="" name="lastname">#}
+                          </div>
+                          <div class="form-group required">
+                              {{ form.email.errors }}
+                            <label for="{{ form.email.id_for_lable }}" class="control-label">آدرس ایمیل</label>
+                              {{ form.email }}
+{#                            <input type="text" class="form-control" id="input-payment-email" placeholder="آدرس ایمیل" value="" name="email">#}
+                          </div>
+                          <div class="form-group required">
+                              {{ form.phone.errors }}
+                            <label for="{{ form.phone.id_for_lable }}" class="control-label">شماره تلفن</label>
+                              {{ form.phone }}
+{#                            <input type="text" class="form-control" id="input-payment-telephone" placeholder="شماره تلفن" value="" name="telephone">#}
+                          </div>
+
+                        </fieldset>
+                      </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title"><i class="fa fa-book"></i> آدرس</h4>
+                </div>
+
+                  <div class="panel-body">
+
+                        <fieldset id="address" class="required">
+
+                          <div class="form-group required">
+                              {{ form.address.errors }}
+                            <label for="{{ form.address.id_for_lable }}" class="control-label">آدرس </label>
+                              {{ form.address }}
+{#                            <input type="text" class="form-control" id="input-payment-address-1" placeholder="آدرس 1" value="" name="address_1">#}
+                          </div>
+
+                          <div class="form-group required">
+                              {{ form.city.errors }}
+                            <label for="{{ form.city.id_for_lable }}" class="control-label">شهر</label>
+                              {{ form.city }}
+{#                            <input type="text" class="form-control" id="input-payment-city" placeholder="شهر" value="" name="city">#}
+                          </div>
+                          <div class="form-group required">
+                              {{ form.postal_code.errors }}
+                            <label for="{{ form.postal_code.id_for_lable }}" class="control-label">کد پستی</label>
+                              {{ form.postal_code }}
+{#                            <input type="text" class="form-control" id="input-payment-postcode" placeholder="کد پستی" value="" name="postcode">#}
+                          </div>
+
+
+
+                        <input type="submit" value="تایید سفارش" class="btn btn-primary">
+
+                        </fieldset>
+
+                      </div>
+              </div>
+               </form>
+            </div>
+            <div class="col-sm-8">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title"><i class="fa fa-truck"></i> شیوه ی تحویل</h4>
+                    </div>
+                      <div class="panel-body">
+                        <p>لطفا یک شیوه حمل و نقل انتخاب کنید.</p>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" checked="checked" name="ارسال رایگان">
+                            رایگان - 0 تومان</label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="Flat Shipping Rate">
+                            هزینه ی ثابت - 8000 تومان</label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="Per Item Shipping Rate">
+                            ارسال هر آیتم به صورت جداگانه - 150000 تومان</label>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title"><i class="fa fa-credit-card"></i> شیوه پرداخت</h4>
+                    </div>
+                      <div class="panel-body">
+                        <p>لطفا یک شیوه پرداخت برای سفارش خود انتخاب کنید.</p>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" checked="checked" name="Cash On Delivery">
+                            پرداخت هنگام تحویل</label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="Bank Transfer">
+                            واریز به حساب</label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="Paypal">
+                            پی پال</label>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title"><i class="fa fa-ticket"></i> استفاده از کوپن تخفیف</h4>
+                    </div>
+                      <div class="panel-body">
+                        <label for="input-coupon" class="col-sm-3 control-label">کد تخفیف خود را وارد کنید</label>
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="input-coupon" placeholder="کد تخفیف خود را در اینجا وارد کنید" value="" name="coupon">
+                          <span class="input-group-btn">
+                          <input type="button" class="btn btn-primary" data-loading-text="بارگذاری ..." id="button-coupon" value="اعمال کوپن">
+                          </span></div>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title"><i class="fa fa-gift"></i> استفاده از کارت هدیه</h4>
+                    </div>
+                      <div class="panel-body">
+                        <label for="input-voucher" class="col-sm-3 control-label">کد کارت هدیه خود را وارد کنید</label>
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="input-voucher" placeholder="کد کارت هدیه خود را در اینجا وارد کنید" value="" name="voucher">
+                          <span class="input-group-btn">
+                          <input type="submit" class="btn btn-primary" data-loading-text="بارگذاری ..." id="button-voucher" value="اعمال کارت هدیه">
+                          </span> </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title"><i class="fa fa-shopping-cart"></i> سبد خرید</h4>
+                    </div>
+                      <div class="panel-body">
+                        <div class="table-responsive">
+                          <table class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <td class="text-center">تصویر</td>
+                                <td class="text-left">نام محصول</td>
+                                <td class="text-left">تعداد</td>
+                                <td class="text-right">قیمت واحد</td>
+                                <td class="text-right">کل</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            {% for item in cart %}
+                                {% with product=item.product %}
+
+
+                              <tr>
+                                <td class="text-center"><a href="product.html"><img src="{{ product.image.url }}" alt="کفش راحتی مردانه" title="کفش راحتی مردانه" class="img-thumbnail"></a></td>
+                                <td class="text-left"><a href="product.html">{{ product.name }}</a></td>
+                                <td class="text-left"><div class="input-group btn-block" style="max-width: 200px;">
+{#                                    <input type="text" name="quantity" value="1" size="1" class="form-control">#}
+                                    <form method="post" action="{% url 'cart:cart_add' product.id %}">
+                                        {% csrf_token %}
+                                        {{ item.update_quantity_form.quantity }}
+                                        {{ item.update_quantity_form.update }}
+                                    <span class="input-group-btn">
+                                    <button type="submit" data-toggle="tooltip" title="بروزرسانی" class="btn btn-primary"><i class="fa fa-refresh"></i></button>
+                                    <button type="button" data-toggle="tooltip" title="حذف" class="btn btn-danger" onClick=""><a href="{% url 'cart:cart_remove' product.id %}">حذف</a></button>
+                                    </span></form></div></td>
+
+                                <td class="text-right">{{ product.price }}</td>
+                                <td class="text-right">{{ product.price }}</td>
+                              </tr>
+                            {% endwith %}
+
+                            {% endfor %}
+
+                            </tbody>
+                            <tfoot>
+                              <tr>
+                                <td class="text-right" colspan="4"><strong>جمع کل:</strong></td>
+                                <td class="text-right">{{ cart.get_total_price }}</td>
+                              </tr>
+                              <tr>
+                                <td class="text-right" colspan="4"><strong>هزینه ارسال ثابت :</strong></td>
+                                <td class="text-right"></td>
+                              </tr>
+                              <tr>
+                                <td class="text-right" colspan="4"><strong>کسر هدیه:</strong></td>
+                                <td class="text-right"></td>
+                              </tr>
+                              <tr>
+                                <td class="text-right" colspan="4"><strong>مالیات:</strong></td>
+                                <td class="text-right"></td>
+                              </tr>
+                              <tr>
+                                <td class="text-right" colspan="4"><strong>کل :</strong></td>
+                                <td class="text-right">{{ cart.get_total_price }}</td>
+                              </tr>
+                            </tfoot>
+                          </table>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title"><i class="fa fa-pencil"></i> افزودن توضیح برای سفارش.</h4>
+                    </div>
+                      <div class="panel-body">
+                        <textarea rows="4" class="form-control" id="confirm_comment" name="comments"></textarea>
+                        <br>
+                        <label class="control-label" for="confirm_agree">
+                          <input type="checkbox" checked="checked" value="1" required="" class="validate required" id="confirm_agree" name="confirm agree">
+                          <span><a class="agree" href="#"><b>شرایط و قوانین</b></a> را خوانده ام و با آنها موافق هستم.</span> </label>
+
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Middle Part End -->
+      </div>
+    </div>
+  </div>
+      {% endblock %}
+  <!--Footer Start-->
+  <footer id="footer">
+    <div class="fpart-first">
+      <div class="container">
+        <div class="row">
+          <div class="contact col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <h5>اطلاعات تماس</h5>
+            <ul>
+              <li class="address"><i class="fa fa-map-marker"></i>میدان تایمز، شماره 77، نیویورک</li>
+              <li class="mobile"><i class="fa fa-phone"></i>+21 9898777656</li>
+              <li class="email"><i class="fa fa-envelope"></i>برقراری ارتباط از طریق <a href="contact-us.html">تماس با ما</a>
+            </ul>
+          </div>
+          <div class="column col-lg-2 col-md-2 col-sm-3 col-xs-12">
+            <h5>اطلاعات</h5>
+            <ul>
+              <li><a href="about-us.html">درباره ما</a></li>
+              <li><a href="about-us.html">اطلاعات 0 تومان</a></li>
+              <li><a href="about-us.html">حریم خصوصی</a></li>
+              <li><a href="about-us.html">شرایط و قوانین</a></li>
+            </ul>
+          </div>
+          <div class="column col-lg-2 col-md-2 col-sm-3 col-xs-12">
+            <h5>خدمات مشتریان</h5>
+            <ul>
+              <li><a href="contact-us.html">تماس با ما</a></li>
+              <li><a href="#">بازگشت</a></li>
+              <li><a href="sitemap.html">نقشه سایت</a></li>
+            </ul>
+          </div>
+          <div class="column col-lg-2 col-md-2 col-sm-3 col-xs-12">
+            <h5>امکانات جانبی</h5>
+            <ul>
+              <li><a href="#">برند ها</a></li>
+              <li><a href="#">کارت هدیه</a></li>
+              <li><a href="#">بازاریابی</a></li>
+              <li><a href="#">ویژه ها</a></li>
+            </ul>
+          </div>
+          <div class="column col-lg-2 col-md-2 col-sm-3 col-xs-12">
+            <h5>حساب من</h5>
+            <ul>
+              <li><a href="#">حساب کاربری</a></li>
+              <li><a href="#">تاریخچه سفارشات</a></li>
+              <li><a href="#">لیست علاقه مندی</a></li>
+              <li><a href="#">خبرنامه</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fpart-second">
+      <div class="container">
+        <div id="powered" class="clearfix">
+          <div class="powered_text pull-left flip">
+            <p>کپی رایت © 2016 فروشگاه شما | پارسی سازی و ویرایش توسط <a href="https://mrcode.ir" target="_blank">مسترکد</a></p>
+          </div>
+          <div class="social pull-right flip"> <a href="#" target="_blank"> <img data-toggle="tooltip" src="image/socialicons/facebook.png" alt="Facebook" title="Facebook"></a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="image/socialicons/twitter.png" alt="Twitter" title="Twitter"> </a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="image/socialicons/google_plus.png" alt="Google+" title="Google+"> </a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="image/socialicons/pinterest.png" alt="Pinterest" title="Pinterest"> </a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="image/socialicons/rss.png" alt="RSS" title="RSS"> </a> </div>
+        </div>
+        <div class="bottom-row">
+          <div class="custom-text text-center">
+            <p>این یک بلاک مدیریت محتواست. شما میتوانید هر نوع محتوای html نوشتاری یا تصویری را در آن قرار دهید. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+          </div>
+          <div class="payments_types"> <a href="#" target="_blank"> <img data-toggle="tooltip" src="image/payment/payment_paypal.png" alt="paypal" title="PayPal"></a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="image/payment/payment_american.png" alt="american-express" title="American Express"></a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="image/payment/payment_2checkout.png" alt="2checkout" title="2checkout"></a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="image/payment/payment_maestro.png" alt="maestro" title="Maestro"></a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="image/payment/payment_discover.png" alt="discover" title="Discover"></a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="image/payment/payment_mastercard.png" alt="mastercard" title="MasterCard"></a> </div>
+        </div>
+      </div>
+    </div>
+    <div id="back-top"><a data-toggle="tooltip" title="بازگشت به بالا" href="javascript:void(0)" class="backtotop"><i class="fa fa-chevron-up"></i></a></div>
+  </footer>
+  <!--Footer End-->
+  <!-- Facebook Side Block Start -->
+  <div id="facebook" class="fb-left sort-order-1">
+    <div class="facebook_icon"><i class="fa fa-facebook"></i></div>
+    <div class="fb-page" data-href="https://www.facebook.com/harnishdesign/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true" data-show-posts="false">
+      <div class="fb-xfbml-parse-ignore">
+        <blockquote cite="https://www.facebook.com/harnishdesign/"><a href="https://www.facebook.com/harnishdesign/">هارنیش دیزاین</a></blockquote>
+      </div>
+    </div>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  </div>
+  <!-- Facebook Side Block End -->
+  <!-- Twitter Side Block Start -->
+  <div id="twitter_footer" class="twit-left sort-order-2">
+    <div class="twitter_icon"><i class="fa fa-twitter"></i></div>
+    <a class="twitter-timeline" href="https://twitter.com/" data-chrome="nofooter noscrollbar transparent" data-theme="light" data-tweet-limit="2" data-related="twitterapi,twitter" data-aria-polite="assertive" data-widget-id="347621595801608192">توییت های @</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </div>
+  <!-- Twitter Side Block End -->
+  <!-- Video Side Block Start -->
+  <div id="video_box" class="vb-left sort-order-3">
+    <div id="video_box_icon"><i class="fa fa-play"></i></div>
+    <p>
+      <iframe allowfullscreen="" src="//www.youtube.com/embed/SZEflIVnhH8" height="315" width="560"></iframe>
+    </p>
+  </div>
+  <!-- Video Side Block End -->
+  <!-- Custom Side Block Start -->
+  <div id="custom_side_block" class="custom_side_block_left sort-order-4">
+    <div class="custom_side_block_icon"> <i class="fa fa-chevron-right"></i> </div>
+    <table>
+      <tbody>
+        <tr>
+          <td><h2>بلاک های محتوا</h2></td>
+        </tr>
+        <tr>
+          <td><img alt="" src="image/banner/cms-block.jpg"></td>
+        </tr>
+        <tr>
+          <td>میتوانید محتوای دلخواه خود را به این بخش اضافه کنید.</td>
+        </tr>
+        <tr>
+          <td><strong><a href="#">ادامه مطلب</a></strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Custom Side Block End -->
+</div>
+<!-- JS Part Start-->
+<script type="text/javascript" src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.easing-1.3.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.dcjqaccordion.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+<!-- JS Part End-->
+</body>
+</html>

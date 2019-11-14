@@ -1,0 +1,356 @@
+{% extends 'index.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html dir="rtl">
+{% block head %}
+<head>
+
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="{% static 'image/favicon.png' %}" rel="icon" />
+{% block title %}
+<title>LorestanKala.com</title>
+{% endblock %}
+<meta name="description" content="Responsive and clean html template design for any kind of ecommerce webshop">
+<!-- CSS Part Start-->
+<link rel="stylesheet" type="text/css" href="{% static 'js/bootstrap/css/bootstrap.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'js/bootstrap/css/bootstrap-rtl.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome/css/font-awesome.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/owl.transitions.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet-rtl.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/responsive-rtl.css' %}" />
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans' type='text/css'>
+<!-- CSS Part End-->
+
+</head>
+{% endblock %}
+<body>
+<div class="wrapper-wide">
+  <div id="header">
+    <!-- Top Bar Start-->
+
+    <!-- Top Bar End-->
+    <!-- Header Start-->
+
+    <!-- Header End-->
+    <!-- Main آقایانu Start-->
+{% block content %}
+  <div id="container">
+    <!-- Feature Box Start-->
+
+
+
+
+    <div class="container">
+      <div class="custom-feature-box row">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="feature-box fbox_1">
+            <div class="title">ارسال رایگان</div>
+            <p>برای خرید های بیش از 100 هزار تومان</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="feature-box fbox_2">
+            <div class="title">پس فرستادن رایگان</div>
+            <p>بازگشت کالا تا 24 ساعت پس از خرید</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="feature-box fbox_3">
+            <div class="title">کارت هدیه</div>
+            <p>بهترین هدیه برای عزیزان شما</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="feature-box fbox_4">
+            <div class="title">امتیازات خرید</div>
+            <p>از هر خرید امتیاز کسب کرده و از آن بهره بگیرید</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Feature Box End-->
+    <div class="container">
+      <div class="row">
+        <!-- Left Part Start-->
+        <aside id="column-left" class="col-sm-3 hidden-xs">
+          <h3 class="subtitle">دسته ها</h3>
+          <div class="box-category">
+            <ul id="cat_accordion">
+            {% for c in categories %}
+
+              <li><a href="{% url 'shop:product_by_category' c.id%}">{{ c.name }}</a>
+
+                  {% endfor %}
+
+              </li>
+
+            </ul>
+          </div>
+
+{#          <h3 class="subtitle">ویژه</h3>#}
+{#          <div class="side-item">#}
+{##}
+{#              {% for OffProduct in OffProducts %}#}
+{##}
+{#            <div class="product-thumb clearfix">#}
+{#              <div class="image"><a href="product.html"><img src="{{ OffProduct.image.url }}" alt=" {{ OffProduct.name }} " title=" {{ OffProduct.name }} " class="img-responsive" /></a></div>#}
+{#              <div class="caption">#}
+{#                <h4><a href="product.html">{{ OffProduct.name }}</a></h4>#}
+{#                <p class="price"> <span class="price-new">{{ OffProduct.price }}</span> <span class="price-old">{{ OffProduct.name }}</span> <span class="saving">-26%</span> </p>#}
+{#              </div>#}
+{#            </div>#}
+{#              {% endfor %}#}
+{##}
+{#          </div>#}
+          <div class="list-group">
+            <h3 class="subtitle">توضیحات</h3>
+            <p>میتوانید اجناس مورد نیاز خود را با بهترین کیفیت و پایین ترین قیمت تهیه کنید . </p>
+            <p> همچنین میتوانید با همکاری با ما اجناس خود را در سایت ما به فروش گذاشته و کسب درامد کنید . </p>
+            <p> برای اطلاعات بیشتر به قسمت سوالات متداول مراجعه کنید . </p>
+          </div>
+
+          <h3 class="subtitle">جدیدترین</h3>
+          <div class="side-item">
+
+              {% for foo in product2 %}
+
+            <div class="product-thumb clearfix">
+              <div class="image"><a href="product.html"><img src="{{ foo.image.url }}" alt="{{ foo.name }}" title="{{ foo.name }}" class="img-responsive" /></a></div>
+              <div class="caption">
+                <h4><a href="product.html">{{ foo.name }}</a></h4>
+                <p class="price"> {{ foo.price }} </p>
+                <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
+              </div>
+            </div>
+
+               {% endfor %}
+
+          </div>
+        </aside>
+        <!-- Left Part End-->
+        <!--Middle Part Start-->
+      <hr>
+
+
+        <div id="content" class="col-sm-9">
+
+{#              <div class="owl-carousel product_carousel">#}
+
+        <section>
+
+            {% for foo in product %}
+
+
+            <div class="product-thumb clearfix">
+              <div class="image"><a href="{% url 'shop:product_detail' foo.pk %}"><img src="{{ foo.image.url }}" alt="{{ foo.name }}" title="{{ foo.name }}" class="img-responsive" /></a></div>
+              <div class="caption">
+                <h4><a href="{% url 'shop:product_detail' foo.pk %}">{{ foo.name }}</a></h4>
+                <p class="price"><span class="price-new">{{ foo.price }}</span><span class="price-old">{{ foo.price }}</span><span class="saving">-10%</span></p>
+              </div>
+              <div class="button-group">
+                <button class="btn-primary" type="button" onClick="cart.add('42');"><span>افزودن به سبد</span></button>
+                <div class="add-to-links">
+                  <button type="button" data-toggle="tooltip" title="Add to Wish List" onClick=""><i class="fa fa-heart"></i></button>
+                  <button type="button" data-toggle="tooltip" title="مقایسه this محصولات" onClick=""><i class="fa fa-exchange"></i></button>
+                </div>
+              </div>
+            </div>
+
+            {% endfor %}
+{#              </div>#}
+
+            <hr>
+
+            <div class="pagination" >
+
+
+                {% if product %}
+
+                    {% if product.has_previous %}
+
+                        <a href="?page={{ product.previous_page_number }}">Pervious</a>
+
+                    {% endif %}
+
+                    Page{{ product.number }}Of{{ product.paginator.num_pages }}Pages
+
+                    {% if product.has_next %}
+
+                        <a href="?page={{ product.next_page_number }}">Next</a>
+
+                    {% endif %}
+
+                {% endif %}
+
+
+            </div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <!--Middle Part End-->
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+  <!--Footer Start-->
+  <footer id="footer">
+    <div class="fpart-first">
+      <div class="container">
+        <div class="row">
+          <div class="contact col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <h5>اطلاعات تماس</h5>
+            <ul>
+              <li class="address"><i class="fa fa-map-marker"></i>میدان تایمز، شماره 77، نیویورک</li>
+              <li class="mobile"><i class="fa fa-phone"></i>+21 9898777656</li>
+              <li class="email"><i class="fa fa-envelope"></i>برقراری ارتباط از طریق <a href="contact-us.html">تماس با ما</a>
+            </ul>
+          </div>
+          <div class="column col-lg-2 col-md-2 col-sm-3 col-xs-12">
+            <h5>اطلاعات</h5>
+            <ul>
+              <li><a href="about-us.html">درباره ما</a></li>
+              <li><a href="about-us.html">اطلاعات ارسال</a></li>
+              <li><a href="about-us.html">حریم خصوصی</a></li>
+              <li><a href="about-us.html">شرایط و قوانین</a></li>
+            </ul>
+          </div>
+          <div class="column col-lg-2 col-md-2 col-sm-3 col-xs-12">
+            <h5>خدمات مشتریان</h5>
+            <ul>
+              <li><a href="contact-us.html">تماس با ما</a></li>
+              <li><a href="#">بازگشت</a></li>
+              <li><a href="sitemap.html">نقشه سایت</a></li>
+            </ul>
+          </div>
+          <div class="column col-lg-2 col-md-2 col-sm-3 col-xs-12">
+            <h5>امکانات جانبی</h5>
+            <ul>
+              <li><a href="#">برند ها</a></li>
+              <li><a href="#">کارت هدیه</a></li>
+              <li><a href="#">بازاریابی</a></li>
+              <li><a href="#">ویژه ها</a></li>
+            </ul>
+          </div>
+          <div class="column col-lg-2 col-md-2 col-sm-3 col-xs-12">
+            <h5>حساب من</h5>
+            <ul>
+              <li><a href="#">حساب کاربری</a></li>
+              <li><a href="#">تاریخچه سفارشات</a></li>
+              <li><a href="#">لیست علاقه مندی</a></li>
+              <li><a href="#">خبرنامه</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fpart-second">
+      <div class="container">
+        <div id="powered" class="clearfix">
+          <div class="powered_text pull-left flip">
+            <p>کپی رایت © 2016 فروشگاه شما | پارسی سازی و ویرایش توسط <a href="https://mrcode.ir" target="_blank">مسترکد</a></p>
+          </div>
+          <div class="social pull-right flip"> <a href="#" target="_blank"> <img data-toggle="tooltip" src="{% static 'image/socialicons/facebook.png' %}" alt="Facebook" title="Facebook"></a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="{% static 'image/socialicons/twitter.png' %}" alt="Twitter" title="Twitter"> </a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="{% static 'image/socialicons/google_plus.png' %}" alt="Google+" title="Google+"> </a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="{% static 'image/socialicons/pinterest.png' %}" alt="Pinterest" title="Pinterest"> </a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="{% static 'image/socialicons/rss.png' %}" alt="RSS" title="RSS"> </a> </div>
+        </div>
+        <div class="bottom-row">
+          <div class="custom-text text-center">
+            <p>این یک بلاک مدیریت محتواست. شما میتوانید هر نوع محتوای html نوشتاری یا تصویری را در آن قرار دهید. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+          </div>
+          <div class="payments_types"> <a href="#" target="_blank"> <img data-toggle="tooltip" src="{% static 'image/payment/payment_paypal.png' %}" alt="paypal" title="PayPal"></a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="{% static 'image/payment/payment_american.png' %}" alt="american-express" title="American Express"></a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="{% static 'image/payment/payment_2checkout.png' %}" alt="2checkout" title="2checkout"></a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="{% static 'image/payment/payment_maestro.png' %}" alt="maestro" title="Maestro"></a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="{% static 'image/payment/payment_discover.png' %}" alt="discover" title="Discover"></a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="{% static 'image/payment/payment_mastercard.png' %}" alt="mastercard" title="MasterCard"></a> </div>
+        </div>
+      </div>
+    </div>
+    <div id="back-top"><a data-toggle="tooltip" title="بازگشت به بالا" href="javascript:void(0)" class="backtotop"><i class="fa fa-chevron-up"></i></a></div>
+  </footer>
+  <!--Footer End-->
+  <!-- Facebook Side Block Start -->
+  <div id="facebook" class="fb-left sort-order-1">
+    <div class="facebook_icon"><i class="fa fa-facebook"></i></div>
+    <div class="fb-page" data-href="https://www.facebook.com/harnishdesign/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true" data-show-posts="false">
+      <div class="fb-xfbml-parse-ignore">
+        <blockquote cite="https://www.facebook.com/harnishdesign/"><a href="https://www.facebook.com/harnishdesign/">هارنیش دیزاین</a></blockquote>
+      </div>
+    </div>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  </div>
+  <!-- Facebook Side Block End -->
+  <!-- Twitter Side Block Start -->
+  <div id="twitter_footer" class="twit-left sort-order-2">
+    <div class="twitter_icon"><i class="fa fa-twitter"></i></div>
+    <a class="twitter-timeline" href="https://twitter.com/" data-chrome="nofooter noscrollbar transparent" data-theme="light" data-tweet-limit="2" data-related="twitterapi,twitter" data-aria-polite="assertive" data-widget-id="347621595801608192">توییت های @</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </div>
+  <!-- Twitter Side Block End -->
+  <!-- Video Side Block Start -->
+  <div id="video_box" class="vb-left sort-order-3">
+    <div id="video_box_icon"><i class="fa fa-play"></i></div>
+    <p>
+      <iframe allowfullscreen="" src="//www.youtube.com/embed/SZEflIVnhH8" height="315" width="560"></iframe>
+    </p>
+  </div>
+  <!-- Video Side Block End -->
+  <!-- Custom Side Block Start -->
+  <div id="custom_side_block" class="custom_side_block_left sort-order-4">
+    <div class="custom_side_block_icon"> <i class="fa fa-chevron-right"></i> </div>
+    <table>
+      <tbody>
+        <tr>
+          <td><h2>بلاک های محتوا</h2></td>
+        </tr>
+        <tr>
+          <td><img alt="" src="image/banner/cms-block.jpg"></td>
+        </tr>
+        <tr>
+          <td>میتوانید محتوای دلخواه خود را به این بخش اضافه کنید.</td>
+        </tr>
+        <tr>
+          <td><strong><a href="#">ادامه مطلب</a></strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Custom Side Block End -->
+</div>
+<!-- JS Part Start-->
+{% block scripts %}
+
+
+<script type="text/javascript" src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.easing-1.3.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.dcjqaccordion.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+
+{% endblock %}
+<!-- JS Part End-->
+</body>
+</html>
+

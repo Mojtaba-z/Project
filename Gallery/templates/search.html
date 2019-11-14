@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="get" action="{% url 'shop:search' %}">
+    {% csrf_token %}
+    <input name="q" value="{{ request.GET.q }}" placeholder="search...">
+    <button class="btn btn-success" type="submit">
+        search
+    </button>
+</form>
+</body>
+</html>

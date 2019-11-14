@@ -1,0 +1,251 @@
+{% extends 'index.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="{% static 'image/favicon.png' %} }" rel="icon" />
+{% block title %}
+<title>سبد خرید</title>
+{% endblock %}
+<meta name="description" content="Responsive and clean html template design for any kind of ecommerce webshop">
+<!-- CSS Part Start-->
+<link rel="stylesheet" type="text/css" href="{% static 'js/bootstrap/css/bootstrap.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'js/bootstrap/css/bootstrap-rtl.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome/css/font-awesome.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/owl.transitions.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet-rtl.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/responsive-rtl.css' %}" />
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans' type='text/css'>
+<!-- CSS Part End-->
+</head>
+<body>
+<div class="wrapper-wide">
+  <div id="header">
+    <!-- Top Bar Start-->
+
+    <!-- Top Bar End-->
+    <!-- Header Start-->
+
+          <!-- Mini Cart End-->
+          <!-- جستجو Start-->
+
+
+    <!-- Header End-->
+    <!-- Main آقایانu Start-->
+
+    <!-- Main آقایانu End-->
+ {% block content %}
+
+
+  <div id="container">
+    <div class="container">
+      <!-- Breadcrumb Start-->
+      <ul class="breadcrumb">
+        <li><a href="index.html"><i class="fa fa-home"></i></a></li>
+        <li><a href="cart.html">سبد خرید</a></li>
+      </ul>
+      <!-- Breadcrumb End-->
+      <div class="row">
+        <!--Middle Part Start-->
+        <div id="content" class="col-sm-12">
+          <h1 class="title">سبد خرید</h1>
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <td class="text-center">تصویر</td>
+                    <td class="text-left">نام محصول</td>
+                    <td class="text-left">مدل</td>
+                    <td class="text-left">تعداد</td>
+                    <td class="text-right">قیمت واحد</td>
+                    <td class="text-right">کل</td>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for item in cart %}
+                    {% with product=item.product  %}
+
+                  <tr>
+                    <td class="text-center"><a href="product.html"><img src="{{ product.image.url }}" alt="تبلت ایسر" title="تبلت ایسر" class="img-thumbnail" /></a></td>
+                    <td class="text-left"><a href="product.html">{{ product.name }}</a><br />
+                      <small>امتیازات خرید: 1000</small></td>
+                    <td class="text-left">{{ product.name }}</td>
+
+                        <form method="post" action="{% url 'cart:cart_add' product.id %}">
+                            <td class="text-left"><div class="input-group btn-block quantity">
+                            {% csrf_token %}
+                            {{ item.update_quantity_form.quantity }}
+                            {{ item.update_quantity_form.update }}
+
+
+                        <span class="input-group-btn">
+                            <button type="submit" data-toggle="tooltip" title="بروزرسانی" class="btn btn-primary"><i class="fa fa-refresh"></i></button>
+                            <button type="button" data-toggle="tooltip" title="حذف" class="btn btn-danger" onClick=""><a href="{% url 'cart:cart_remove' product.id %}">حذف</a><i class="fa fa-times-circle"></i></button>
+
+
+                        </span></div></td>
+                        </form>
+
+                    <td class="text-right">{{ item.price }}</td>
+                    <td class="text-right">{{ item.total_price }}</td>
+                  </tr>
+                {% endwith %}
+
+                {% endfor %}
+
+                </tbody>
+              </table>
+            </div>
+          <h2 class="subtitle">حالا مایلید چه کاری انجام دهید؟</h2>
+          <p>در صورتی که کد تخفیف در اختیار دارید میتوانید از آن در اینجا استفاده کنید.</p>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">استفاده از کوپن تخفیف</h4>
+                </div>
+                <div id="collapse-coupon" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <label class="col-sm-4 control-label" for="input-coupon">کد تخفیف خود را در اینجا وارد کنید</label>
+                    <div class="input-group">
+                      <input type="text" name="coupon" value="" placeholder="کد تخفیف خود را در اینجا وارد کنید" id="input-coupon" class="form-control" />
+                      <span class="input-group-btn">
+                      <input type="button" value="اعمال کد تخفیف" id="button-coupon" data-loading-text="بارگذاری ..."  class="btn btn-primary" />
+                      </span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">استفاده از کارت هدیه</h4>
+                </div>
+                <div id="collapse-voucher" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <label class="col-sm-4 control-label" for="input-voucher">کد کارت هدیه را در اینجا وارد کنید</label>
+                    <div class="input-group">
+                      <input type="text" name="voucher" value="" placeholder="کد کارت هدیه را در اینجا وارد کنید" id="input-voucher" class="form-control" />
+                      <span class="input-group-btn">
+                      <input type="submit" value="اعمال کارت هدیه" id="button-voucher" data-loading-text="بارگذاری ..."  class="btn btn-primary" />
+                      </span> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">پیش بینی هزینه ی حمل و نقل و مالیات</h4>
+            </div>
+
+                  <div class="form-group required">
+                    <label class="col-sm-2 control-label" for="input-postcode">کد پستی</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="postcode" value="" placeholder="کد پستی" id="input-postcode" class="form-control" />
+                    </div>
+                  </div>
+                  <input type="button" value="دریافت پیش فاکتور" id="button-quote" data-loading-text="بارگذاری ..." class="btn btn-primary" />
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 col-sm-offset-8">
+              <table class="table table-bordered">
+                <tr>
+                  <td class="text-right"><strong>جمع کل:</strong></td>
+                  <td class="text-right">{{ cart.get_total_price }}</td>
+                </tr>
+
+                <tr>
+                  <td class="text-right"><strong>قابل پرداخت :</strong></td>
+                  <td class="text-right">{{ cart.get_total_price }}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="buttons">
+            <div class="pull-left"><a href="{% url 'shop:index' %}" class="btn btn-default">ادامه خرید</a></div>
+            <div class="pull-right"><a href="{% url 'orders:order_create' %}" class="btn btn-primary">تسویه حساب</a></div>
+          </div>
+        </div>
+        <!--Middle Part End -->
+      </div>
+    </div>
+  </div>
+{% endblock %}
+  <!--Footer Start-->
+
+  <!--Footer End-->
+  <!-- Facebook Side Block Start -->
+  <div id="facebook" class="fb-left sort-order-1">
+    <div class="facebook_icon"><i class="fa fa-facebook"></i></div>
+    <div class="fb-page" data-href="https://www.facebook.com/harnishdesign/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true" data-show-posts="false">
+      <div class="fb-xfbml-parse-ignore">
+        <blockquote cite="https://www.facebook.com/harnishdesign/"><a href="https://www.facebook.com/harnishdesign/">هارنیش دیزاین</a></blockquote>
+      </div>
+    </div>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  </div>
+  <!-- Facebook Side Block End -->
+  <!-- Twitter Side Block Start -->
+  <div id="twitter_footer" class="twit-left sort-order-2">
+    <div class="twitter_icon"><i class="fa fa-twitter"></i></div>
+    <a class="twitter-timeline" href="https://twitter.com/" data-chrome="nofooter noscrollbar transparent" data-theme="light" data-tweet-limit="2" data-related="twitterapi,twitter" data-aria-polite="assertive" data-widget-id="347621595801608192">توییت های @</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </div>
+  <!-- Twitter Side Block End -->
+  <!-- Video Side Block Start -->
+  <div id="video_box" class="vb-left sort-order-3">
+    <div id="video_box_icon"><i class="fa fa-play"></i></div>
+    <p>
+      <iframe allowfullscreen="" src="//www.youtube.com/embed/SZEflIVnhH8" height="315" width="560"></iframe>
+    </p>
+  </div>
+  <!-- Video Side Block End -->
+  <!-- Custom Side Block Start -->
+  <div id="custom_side_block" class="custom_side_block_left sort-order-4">
+    <div class="custom_side_block_icon"> <i class="fa fa-chevron-right"></i> </div>
+    <table>
+      <tbody>
+        <tr>
+          <td><h2>بلاک های محتوا</h2></td>
+        </tr>
+        <tr>
+          <td><img alt="" src="image/banner/cms-block.jpg"></td>
+        </tr>
+        <tr>
+          <td>میتوانید محتوای دلخواه خود را به این بخش اضافه کنید.</td>
+        </tr>
+        <tr>
+          <td><strong><a href="#">ادامه مطلب</a></strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Custom Side Block End -->
+</div>
+<!-- JS Part Start-->
+<script type="text/javascript" src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.easing-1.3.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.dcjqaccordion.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+<!-- JS Part End-->
+</body>
+</html>
