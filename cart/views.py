@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect,get_object_or_404
-from shop.models import Product
+from shop.models import Product,Category
 from .cart import Cart
 from .forms import CartAddProductForm
 
@@ -25,8 +25,10 @@ def remove_cart(request,product_id):
 
 def detail_cart(request):
     cart=Cart(request)
+    categories=Category.objects.all()
     for item in cart:
         item['update_quantity_form']=CartAddProductForm(initial={'quantity':item['quantity'],'update':True})
 
-    return render(request,'index/cart.html',{'cart':cart})
+    return render(request,'index/cart.html',{'cart':cart,
+                                             'categories':categories})
 

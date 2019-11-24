@@ -419,7 +419,7 @@
               <div class="image"><a href="{% url 'shop:product_detail' Off.pk%}"><img src="{{ Off.image.url }}" alt="{{ Off.name }}" title="{{ Off.name }}" class="img-responsive" /></a></div>
               <div class="caption">
                 <h4><a href="{% url 'shop:product_detail' Off.pk%}">{{ Off.name }}</a></h4>
-                <p class="price"><span class="price-new">{{ Off.price }}</span><span class="price-old">{{ Off.price }}</span><span class="saving">-10%</span></p>
+                <p class="price"><span class="price-new">{{ Off.price }}</span><span class="price-old">{{ Off.price }}</span></p>
               </div>
               <div class="button-group">
                 <button class="btn-primary" type="button" onClick="cart.add('42');"><span>افزودن به سبد</span></button>
@@ -461,7 +461,7 @@
                     <div class="image"><a href="{% url 'shop:product_detail' foo.pk%}"><img src="{{ foo.image.url }}" alt="{{ foo.name }}" title="{{ foo.name }}" class="img-responsive" /></a></div>
                     <div class="caption">
                       <h4><a href="{% url 'shop:product_detail' foo.pk%}">{{ foo.name }}</a></h4>
-                      <p class="price"> <span class="price-new">{{ foo.price }}</span> <span class="price-old">{{ foo.price }}</span> <span class="saving">-5%</span> </p>
+                      <p class="price"> <span class="price-new">{{ foo.price }}</span> <span class="price-old">{{ foo.price }}</span>  </p>
                       <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
                     </div>
                     <div class="button-group">
