@@ -2,6 +2,7 @@ from django.shortcuts import render,get_object_or_404,redirect,HttpResponseRedir
 from .models import Product,Category
 from django.core.paginator import Paginator
 from django.contrib.auth.forms import AuthenticationForm,PasswordChangeForm
+from allauth.account.forms import LoginForm
 from django.contrib.auth import update_session_auth_hash
 from .forms import RegistrationForm
 from cart.forms import CartAddProductForm
@@ -132,11 +133,11 @@ def login(request):
     categories=Category.objects.all()
     cart=Cart(request)
     if request.method=="POST":
-        form=AuthenticationForm(request=request,data=request.POST)
+        form=LoginForm(request=request,data=request.POST)
         if form.is_valid():
             return redirect('shop:index')
     else:
-        form=AuthenticationForm()
+        form=LoginForm()
 
     return render(request, 'registration/login.html', {'form':form,
                                                        'categories':categories,

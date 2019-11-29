@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from shop.models import Category
 
 
-@login_required()
+# @login_required()
 def order_create(request):
     categories = Category.objects.all()
     cart=Cart(request)

@@ -138,22 +138,26 @@
 
 {#                {% if user.is_authenticated %}#}
 
-                <form method="post" action="{{ app_path }}">
+                <form method="post" action="{{ site_name }}">
                     {% csrf_token %}
-                <div class="form-group">
-                    {{ form.username.errors }}
-                  <label class="control-label" for="{{ form.username.id_for_label }}">یوزر نیم:</label>
-                    {{ form.username }}
+                    {{ form.as_p }}
 
+{#                <div class="form-group">#}
+{#                    {{ form.login.errors }}#}
+{#                  <label class="control-label" for="{{ form.login.id_for_label }}">یوزر نیم:</label>#}
+{#                    {{ form.login }}#}
+{##}
 {#                  <input  type="text" name="email" value="{{ form.username }}" placeholder="آدرس ایمیل" id="input-email" class="form-control" />#}
-                </div>
-                <div class="form-group">
-                    {{ form.password.errors }}
-                  <label class="control-label" for="{{ form.password.id_for_label }}">رمز عبور</label>
-                    {{ form.password }}
+{#                </div>#}
+{#                <div class="form-group">#}
+{#                    {{ form.password.errors }}#}
+{#                  <label class="control-label" for="{{ form.password.id_for_label }}">رمز عبور</label>#}
+{#                    {{ form.password }}#}
 {#                  <input type="password" name="password" value="" placeholder="رمز عبور" id="input-password" class="form-control" />#}
-                  <br />
-                  <a href="{% url 'shop:change_password' %}">فراموشی رمز عبور</a></div>
+{#                  <br />#}
+{#                    مرا به خاطر بسپار{{ form.remember }}#}
+{#                    <br>#}
+{#                  <a href="{% url 'shop:change_password' %}">فراموشی رمز عبور</a></div>#}
                 <input type="submit" value="ورود" class="btn btn-primary" />
                 </form>
 {#                {% endif %}#}
